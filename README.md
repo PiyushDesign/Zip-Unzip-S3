@@ -1,5 +1,44 @@
 # Zip-Unzip-S3
 
+# Create 2 bucket
+
+```sh
+    one is source s3 bucket where we will add the zip file and second s3 will be the destination s3 bucket
+```
+
+# Give IAM permissions to buckets
+
+```sh
+    IAM role permission >> AmazonS3FullAccess , AmazonS3ReadOnlyAccess and create one custom policy as below json code.
+
+    {
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:ListBucket"
+			],
+			"Resource": [
+				"arn:aws:s3:::source-s3-bucket-for-zipfile",
+				"arn:aws:s3:::source-s3-bucket-for-zipfile/*",
+				"arn:aws:s3:::destination-s3-bucket-for-zip",
+				"arn:aws:s3:::destination-s3-bucket-for-zip/*"
+			]
+		}
+	]
+}
+
+```
+
+# Ec2 Instance:
+
+``` sh
+    Now, create the ec2 instance and configure with the AWS and follow the below commands.
+```
+
 ```sh
     So, this script will help you to do a task where you can upload a zip file to Source S3 bucket and 
     it will compress the file and create the folder with the same name of the ZIP file of the source S3 bucket
