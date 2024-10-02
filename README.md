@@ -6,7 +6,3 @@
     and then compress it there
 
 ```
-
-```
-
-```
