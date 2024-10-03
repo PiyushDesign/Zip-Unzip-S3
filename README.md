@@ -1,6 +1,12 @@
 # Zip-Unzip-S3
 
-# Create 2 bucket
+```sh
+    So, this script will help you to do a task where you can upload a zip file to Source S3 bucket and 
+    it will compress the file and create the folder with the same name of the ZIP file of the source S3 bucket
+    and then compress it there
+
+```
+# Create two bucket
 
 ```sh
     one is source s3 bucket where we will add the zip file and second s3 will be the destination s3 bucket
@@ -37,13 +43,6 @@
 
 ``` sh
     Now, create the ec2 instance and configure with the AWS and follow the below commands.
-```
-
-```sh
-    So, this script will help you to do a task where you can upload a zip file to Source S3 bucket and 
-    it will compress the file and create the folder with the same name of the ZIP file of the source S3 bucket
-    and then compress it there
-
 ```
 
 # Step 1: Install Required Packages
